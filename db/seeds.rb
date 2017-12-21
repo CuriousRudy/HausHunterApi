@@ -15,7 +15,7 @@
     zip: Faker::Address.zip_code,
     beds: rand(1..5),
     baths: rand(1..5),
-    asking_price: rand(100000..15000000)
+    asking_price: rand(800000..1500000)
   )
 end
 
@@ -39,18 +39,18 @@ end
   )
 end
 
-25.times do
+75.times do
   Note.create(
     user_id: rand(1..10),
-    appointment_id: rand(1..10),
+    appointment_id: rand(1..50),
     content: Faker::Fallout.quote
   )
 end
 
-25.times do
+75.times do
   Note.create(
     user_id: rand(1..10),
-    appointment_id: rand(1..100),
+    appointment_id: rand(51..100),
     content: Faker::Hacker.say_something_smart
   )
 end
