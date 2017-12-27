@@ -1,7 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :full_name, :email, :listings
-  
-  has_many :appointments    
+  attributes :id, :full_name, :email
+
+  # has_many :appointments
 
   def full_name
     "#{object.first_name} #{object.last_name}"

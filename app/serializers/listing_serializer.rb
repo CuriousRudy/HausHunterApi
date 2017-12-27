@@ -1,3 +1,3 @@
 class ListingSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :appointment_id, :street_address
+  attributes :id, :street_address, :city, :state, :zip, :beds, :baths, :asking_price
 end

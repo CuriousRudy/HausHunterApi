@@ -8,6 +8,6 @@ class AppointmentSerializer < ActiveModel::Serializer
   # 			user_id: note.user_id,
   # 			appointment_id: note.appointment_id,
   # 			content: note.content}
-  # 		end  	
+  # 		end
   # 	end
 end

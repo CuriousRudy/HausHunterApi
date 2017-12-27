@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :listings
       resources :appointments
       resources :notes
+      post '/auth', to: 'auth#create'
     end
   end
+
 end

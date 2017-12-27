@@ -4,10 +4,16 @@ class Api::V1::ListingsController < ApplicationController
     render json: @listings
   end
 
+  def show
+    @listing = Listing.find(params[:id])
+    render json: @listing
+  end
+
   def create
     @listing = Listing.new
     if @listing.save
-      render json: @listing
+      @users = User.all
+      render json: @users
     else
       render json: @listing.errors, status: :unprocessible_entity
     end
