@@ -10,7 +10,8 @@ class Api::V1::ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.new
+    byebug
+    @listing = Listing.new(listing_params)
     if @listing.save
       @users = User.all
       render json: @users
@@ -18,4 +19,11 @@ class Api::V1::ListingsController < ApplicationController
       render json: @listing.errors, status: :unprocessible_entity
     end
   end
+# "street_address"=>"testing", "city"=>"testing",
+# "state"=>"testing", "zip"=>"1111", "beds"=>"1", "baths"=>"1", "asking_price"=>"12315"
+  private
+  def listing_params
+    params.require(:listing).permit(:street_address,:city,:state,:zip,:beds,:baths,:asking_price)
+  end
+
 end
