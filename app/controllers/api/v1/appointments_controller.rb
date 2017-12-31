@@ -15,7 +15,7 @@ class Api::V1::AppointmentsController < ApplicationController
 # t.integer "user_id" t.integer "listing_id" t.date "date" t.time "time" t.boolean "seen"
   private
   def listing_params
-    params.require(:listing).permit(:street_address,:city,:state,:zip,:beds,:baths,:asking_price)
+    params.require(:appointment).permit(:user_id,:listing_id,:date,:time,:seen)
   end
 
 
