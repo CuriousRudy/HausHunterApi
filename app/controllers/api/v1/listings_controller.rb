@@ -10,7 +10,6 @@ class Api::V1::ListingsController < ApplicationController
   end
 
   def create
-    byebug
     @listing = Listing.new(listing_params)
     if @listing.save
       @users = User.all
