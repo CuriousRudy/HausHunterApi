@@ -1,6 +1,15 @@
 class Api::V1::AppointmentsController < ApplicationController
+
   def index
-    @appointments = Appointment.all
+    if current_user
+      # byebug
+      @appointments = current_user.appointments
+      if @appointments.count <= 0
+        @appointments = []
+      end
+    else
+      @appointments = Appointment.all
+    end
     render json: @appointments
   end
 
