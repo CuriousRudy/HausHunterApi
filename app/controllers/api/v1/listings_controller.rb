@@ -18,11 +18,18 @@ class Api::V1::ListingsController < ApplicationController
       render json: @listing.errors, status: :unprocessible_entity
     end
   end
+
+  def destroy
+    @listing= Listing.find(params[:id])
+    @listing.destroy
+    @listings = Listing.all
+    render json: @listings
+  end
 # "street_address"=>"testing", "city"=>"testing",
 # "state"=>"testing", "zip"=>"1111", "beds"=>"1", "baths"=>"1", "asking_price"=>"12315"
   private
   def listing_params
-    params.require(:listing).permit(:street_address,:city,:state,:zip,:beds,:baths,:asking_price)
+    params.require(:listing).permit(:id,:street_address,:city,:state,:zip,:beds,:baths,:asking_price)
   end
 
 end
