@@ -32,7 +32,6 @@ class Api::V1::AppointmentsController < ApplicationController
 
   #destroy the appointment, return all the user's appointments
   def destroy
-    byebug
     @appointment = Appointment.find(params[:id])
     if @appointment.destroy
       @appointments = current_user.appointments

@@ -15,7 +15,9 @@
     zip: Faker::Address.zip_code,
     beds: rand(1..5),
     baths: rand(1..5),
-    asking_price: rand(800000..1500000)
+    asking_price: rand(800000..1500000),
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude
   )
 end
 

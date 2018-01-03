@@ -9,6 +9,8 @@ class CreateListings < ActiveRecord::Migration[5.1]
       t.integer :beds
       t.integer :baths
       t.integer :asking_price
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end

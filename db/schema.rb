@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20171220202459) do
     t.integer "beds"
     t.integer "baths"
     t.integer "asking_price"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
