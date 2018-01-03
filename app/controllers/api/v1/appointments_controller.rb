@@ -13,6 +13,13 @@ class Api::V1::AppointmentsController < ApplicationController
     render json: @appointments
   end
 
+  #show the selected appointment, for testing
+  # def show
+  #   byebug
+  #   @appointment = Appointment.find(params[:id])
+  #   render json: @appointment
+  # end
+
   def create
     @appointment = Appointment.new
     if @appointment.save
@@ -22,5 +29,15 @@ class Api::V1::AppointmentsController < ApplicationController
     end
   end
 
+
+  #destroy the appointment, return all the user's appointments
+  def destroy
+    byebug
+    @appointment = Appointment.find(params[:id])
+    if @appointment.destroy
+      @appointments = current_user.appointments
+      render json: @appointments
+    end
+  end
 
 end

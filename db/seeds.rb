@@ -26,7 +26,7 @@ end
     first_name: name[0],
     last_name: name[1],
     email: Faker::Internet.email(name[0]),
-    password_digest: '123'
+    password: '123'
   )
 end
 
